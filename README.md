@@ -38,6 +38,7 @@ This tool generates a Graphviz diagram of the Python project structure, showing 
 
 - Python 3.8 or higher
 - Graphviz installed on your system ([Graphviz Download Page](https://graphviz.org/download/))
+- Poetry (optional, for development)
 
 ## Installation
 
@@ -50,10 +51,14 @@ This tool generates a Graphviz diagram of the Python project structure, showing 
 git clone https://github.com/codekuu/pyprojectviz.git
 ```
 
-3. Install the Python packages `graphviz` and `typer` using Poetry:
+3. Install the Python packages with Poetry or Pip from source:
 
 ```bash
+# Install with Poetry
 poetry install
+
+# Install with Pip
+pip install .
 ```
 
 ### Pip
