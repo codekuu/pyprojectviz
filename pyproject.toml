@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "pyprojectviz"
+version = "0.1.0"
+description = "Visualizes classes and methods in a Python project"
+authors = ["codekuu <hello-pyprojectviz@inaktiverad.se>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+graphviz = "^0.20.1"
+typer = "^0.9.0"
+pyyaml = "^6.0.1"
+pydantic = "^2.5.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"
+pylint = "^3.0.2"
+pytest = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
