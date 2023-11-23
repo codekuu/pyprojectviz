@@ -12,9 +12,10 @@ def test_app_success():
             ".",
             "--output",
             "test",
+            "--keep-graph",
         ],
     )
-    assert result.exit_code == 0
+    assert result.exit_code == 0, result.stdout
     assert "Graph generated at" in result.stdout
 
 
