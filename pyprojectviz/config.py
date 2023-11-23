@@ -49,6 +49,7 @@ class Configuration(BaseModel):
     ignore_classes: Set[str] = set()
     ignore_modules: Set[str] = set()
     ignore_exceptions: bool = False
+    keep_graph: bool = False
 
 
 def load_config(conf_file) -> Configuration:
