@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyprojectviz"
-version = "0.1.0"
+version = "0.1.1"
 description = "Visualizes classes and methods in a Python project"
 authors = ["codekuu <hello-pyprojectviz@inaktiverad.se>"]
 license = "MIT"
