@@ -1,7 +1,7 @@
 # Pyprojectviz (Python Project Visualization Tool)
 
 <p align="center">
-  <img src="docs/pyprojectviz.png" alt="PyProjectViz"/>
+  <img src="https://raw.githubusercontent.com/codekuu/pyprojectviz/main/docs/pyprojectviz.png" alt="PyProjectViz"/>
 </p>
 
 ## Overview
@@ -9,7 +9,7 @@
 This tool generates a Graphviz diagram of the Python project structure, showing classes, methods, and their relationships, including method calls. It's designed to help developers understand the architecture of a Python codebase by visually mapping out its components.
 
 <p align="center">
-  <img src="docs/example.png" alt="PyProjectViz Example"/>
+  <img src="https://raw.githubusercontent.com/codekuu/pyprojectviz/main/docs/example.png" alt="PyProjectViz Example"/>
 </p>
 
 - [Pyprojectviz (Python Project Visualization Tool)](#pyprojectviz-python-project-visualization-tool)
