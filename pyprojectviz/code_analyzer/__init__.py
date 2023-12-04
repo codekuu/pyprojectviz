@@ -112,8 +112,9 @@ class CodeAnalyzer(ast.NodeVisitor):
 
     def _anonymize(self, name):
         """Anonymize a name"""
-        if name in self.config.anonymize:
-            return "**ANONYMIZED**"
+        for patter in self.config.anonymize:
+            if patter in name:
+                return name.replace(patter, "**ANONYMIZED**")
         return name
 
     def _should_ignore_class(self, class_name):
