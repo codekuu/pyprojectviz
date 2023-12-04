@@ -1,4 +1,4 @@
-from typing import Set
+from typing import Set, List
 import os
 import typer
 import yaml
@@ -48,6 +48,7 @@ class Configuration(BaseModel):
     """Configuration for pyprojectviz"""
 
     graphviz: GraphvizConfiguration = GraphvizConfiguration()
+    anonymize: List[str] = []
     ignore_methods: Set[str] = set()
     ignore_classes: Set[str] = set()
     ignore_modules: Set[str] = set()

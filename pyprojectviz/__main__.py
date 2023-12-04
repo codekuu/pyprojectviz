@@ -6,7 +6,12 @@ import typer
 from pyprojectviz.config import load_config
 from pyprojectviz.utils import generate_graph
 
-app = typer.Typer()
+app = typer.Typer(
+    name="pyprojectviz",
+    help="Generate a graph of the structure of a Python project.\
+ All flags override the configuration file.",
+    short_help="Generate a graph of the structure of a Python project",
+)
 
 
 @app.command()
@@ -18,6 +23,7 @@ def main(
     config_file: str = typer.Option(
         None, "--config", help="Path to the configuration file"
     ),
+    format: str = typer.Option(None, "--format", help="Output file format"),
     keep_graph: bool = typer.Option(
         False, "--keep-graph", help="Keep the graphviz file after rendering"
     ),
@@ -31,6 +37,8 @@ def main(
         raise typer.Exit(code=1)
 
     config = load_config(config_file)
+    if format:
+        config.graphviz.output_format = format
 
     project_path = Path(path).resolve()
     graph = generate_graph(project_path, config)

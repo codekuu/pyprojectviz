@@ -75,7 +75,7 @@ class CodeAnalyzer(ast.NodeVisitor):
         class_label = node.name
         self.graph.node(
             node.name,
-            label=class_label,
+            label=self._anonymize(class_label),
             **self.config.graphviz.class_node_attrs,
         )
         self.current_class = node.name
@@ -87,7 +87,7 @@ class CodeAnalyzer(ast.NodeVisitor):
         method_label = method_name
         self.graph.node(
             method_name,
-            label=method_label,
+            label=self._anonymize(method_label),
             **self.config.graphviz.method_node_attrs,
         )
         if self.current_class:
@@ -109,6 +109,12 @@ class CodeAnalyzer(ast.NodeVisitor):
             self.graph.edge(self.current_method, full_call_name)
 
         self.generic_visit(node)
+
+    def _anonymize(self, name):
+        """Anonymize a name"""
+        if name in self.config.anonymize:
+            return "**ANONYMIZED**"
+        return name
 
     def _should_ignore_class(self, class_name):
         """Check if a class should be ignored"""
