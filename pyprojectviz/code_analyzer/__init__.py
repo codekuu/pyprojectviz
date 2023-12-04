@@ -55,6 +55,7 @@ class CodeAnalyzer(ast.NodeVisitor):
         self.add_call_edge(node, root_module)
 
     def extract_call_name(self, node):
+        """Extract the name of a call"""
         if isinstance(node, ast.Attribute):
             return node.attr
         elif isinstance(node, ast.Name):
@@ -62,6 +63,7 @@ class CodeAnalyzer(ast.NodeVisitor):
         return None
 
     def get_root_module(self, node):
+        """Get the root module of a call"""
         if isinstance(node, ast.Attribute):
             return self.get_root_module(node.value)
         elif isinstance(node, ast.Name):
@@ -69,6 +71,7 @@ class CodeAnalyzer(ast.NodeVisitor):
         return None
 
     def add_class_node(self, node):
+        """Add a node for each class"""
         class_label = node.name
         self.graph.node(
             node.name,
