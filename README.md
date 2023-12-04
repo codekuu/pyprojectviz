@@ -17,11 +17,11 @@ This tool generates a Graphviz diagram of the Python project structure, showing 
   - [Features](#features)
   - [Requirements](#requirements)
   - [Installation](#installation)
-    - [Source](#source)
     - [Pip](#pip)
+    - [Source](#source)
   - [Usage](#usage)
-    - [Source](#source-1)
     - [Pip](#pip-1)
+    - [Source](#source-1)
   - [Customization](#customization)
   - [License](#license)
   - [Contributions](#contributions)
@@ -42,6 +42,15 @@ This tool generates a Graphviz diagram of the Python project structure, showing 
 
 ## Installation
 
+### Pip
+
+1. Ensure you have Python and Graphviz installed on your system.
+2. Install the Python package `pyprojectviz` using Pip:
+
+```bash
+pip install pyprojectviz
+```
+
 ### Source
 
 1. Ensure you have Python and Graphviz installed on your system.
@@ -61,24 +70,7 @@ poetry install
 pip install .
 ```
 
-### Pip
-
-1. Ensure you have Python and Graphviz installed on your system.
-2. Install the Python package `pyprojectviz` using Pip:
-
-```bash
-pip install pyprojectviz
-```
-
 ## Usage
-
-### Source
-
-Run the script from the command line with the following arguments:
-
-```bash
-poetry run python pyprojectviz . --config examples/example_conf_file.yaml
-```
 
 ### Pip
 
@@ -86,6 +78,14 @@ Run the script from the command line with the following arguments:
 
 ```bash
 python -m pyprojectviz . --config examples/example_conf_file.yaml
+```
+
+### Source
+
+Run the script from the command line with the following arguments:
+
+```bash
+poetry run python pyprojectviz . --config examples/example_conf_file.yaml
 ```
 
 This will generate a Graphviz diagram of the project at the "." path, using the specified configuration file.
